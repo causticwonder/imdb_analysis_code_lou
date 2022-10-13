@@ -1,10 +1,11 @@
 import pandas as pd 
 import matplotlib.pyplot as plt
 import numpy as np
+import pickle
 
 df = pd.read_csv('title.ratings.tsv.gz', sep='\t') #open tsv.gz files with tab delimiter
 
-print(len(df)) #original dataset size
+print(df) #print dataframe
 
 print(df.shape) #original dataset shape
 
@@ -15,10 +16,10 @@ df_filtered_rating = df[df['averageRating'] >= 7.5]
 df_filtered_votes = df_filtered_rating[df_filtered_rating['numVotes'] <= 75]
  
 # Print the new dataframe
-#print(df_filtered_rating.head(15))
+print(df_filtered_rating.head(15))
  
 # Print the shape of the dataframe
-#print(df_filtered_rating.shape)
+print(df_filtered_rating.shape)
 
 # Print the new dataframe
 print(df_filtered_votes.head(15))

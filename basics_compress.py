@@ -1,13 +1,5 @@
 import pickle
+import pandas as pd
 
-filename = 'basics'
-outfile = open(filename, 'wb')
-
-pickle.dump('title.basics.tsv.gz', outfile)
-outfile.close()
-
-filename2 = 'ratings'
-outfile = open(filename2, 'wb')
-
-pickle.dump('title.ratings.tsv.gz', outfile)
-outfile.close()
+df = pd.read_csv('data/title.basics.tsv.gz', sep='\t', dtype=str) # Path of the file. 
+df.to_pickle("basics.pkl")
